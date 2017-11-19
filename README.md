@@ -1,6 +1,8 @@
 # appcfg - .NET Application Configuration Made Easy
 With *appcfg* you get one source for all you configuration data stored in environment variables, defined in a configuration file, or passed in on the command line.
 
+> Also available as NuGet package [appcfg](https://www.nuget.org/packages/appcfg/).
+
 ## Overview Example
 > You want to write a program to do simple math calculations. It should add two numbers, sum up a list of numbers, or divide two numbers. Upon division you want to switch between whether division by zero should throw an error or lead to a very large number. Also you want to specify if division results should be rounded.
 
