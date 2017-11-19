@@ -19,6 +19,7 @@ namespace demo
                     .Param("b", "y,divisor",valueType:ValueTypes.Number,isRequired:true)
                     .Param("round", "r",valueType:ValueTypes.Bool)
                     .Param("suppressDivBy0",valueType:ValueTypes.Bool,defaultValue:false,environmentVarName:"DEMO_SUPPRESSDIVBY0")
+                    .Param("silent")
                 );
             
             var cfgcomp = new AppCfgCompiler(cfgSchema);
@@ -48,7 +49,8 @@ namespace demo
                     if (cfg.round)
                         divResult = Math.Round(divResult);
                     
-                    Console.WriteLine($"{cfg.a} / {cfg.b} = {divResult}");
+                    if (!cfg.silent)
+                        Console.WriteLine($"{cfg.a} / {cfg.b} = {divResult}");
                     break;
             }
         }
