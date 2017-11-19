@@ -4,14 +4,6 @@ using System.Linq;
 
 namespace appcfg
 {
-    //Feature: global params spanning all routes
-    //Feature: enum param value type only allows certain strings as values
-    //    The default value could be set to an enum type. It defines which strings are allowed.
-    //    The first value of the enum type then would be the default value.
-    //Feature: filename/path and URL value types
-    //Feature: JSON value type
-    //Feature: Validate that param names are valid identifiers
-    //Feature: A description for routes and params to be shown when help is requested
     public class AppCfgSchema
     {
         public string Filepath { get; }
