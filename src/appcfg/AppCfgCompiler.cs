@@ -9,6 +9,10 @@ using appcfg.compilers;
 
 namespace appcfg
 {
+    //Feature: A function to produce a help text which can be shown to the user.
+    //    Can exist on schema, route, param for help on different levels.
+    //Feature: Pass in all parameters through a config file (or underlying env vars) by giving a config file name on the command line
+    //    This could be done with a pre-defined route.
     public static class AppCfgCompilerExt {
         public static dynamic Compile(this AppCfgSchema schema, string[] args) {
             var compiler = new AppCfgCompiler(schema);
@@ -145,9 +149,7 @@ namespace appcfg
                     else
                         throw new InvalidOperationException($"Cannot parse '{value}' to boolean value.");
                 case ValueTypes.Number:
-                    if (int.TryParse(value, out var i))
-                        return i;
-                    else if (double.TryParse(value, out var d))
+                    if (double.TryParse(value, out var d))
                         return d;
                     else
                         throw new InvalidOperationException($"Cannot parse '{value}' to numeric value.");

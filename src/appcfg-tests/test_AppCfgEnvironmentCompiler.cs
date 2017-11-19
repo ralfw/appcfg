@@ -30,7 +30,7 @@ namespace appcfg_tests
             
             var schema = new AppCfgSchema(
                 "",
-                null
+                new Route[0]
             );
             var sut = new AppCfgEnvironmentCompiler();
             
@@ -51,7 +51,7 @@ namespace appcfg_tests
             
             var schema = new AppCfgSchema(
                 "",
-                null
+                new Route[0]
             );
             var sut = new AppCfgEnvironmentCompiler();
             
@@ -71,7 +71,7 @@ namespace appcfg_tests
             
             var schema = new AppCfgSchema(
                 "",
-                null
+                new Route[0]
             );
             var sut = new AppCfgEnvironmentCompiler();
             
@@ -90,7 +90,7 @@ namespace appcfg_tests
             
             var schema = new AppCfgSchema(
                 "",
-                null
+                new Route[0]
             );
             var sut = new AppCfgEnvironmentCompiler();
             
