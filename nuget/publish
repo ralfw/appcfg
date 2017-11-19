@@ -1,0 +1,6 @@
+#!/bin/bash
+source environment
+
+rm appcfg*.nupkg
+mono lib/nuget.exe pack ../src/appcfg/appcfg.csproj
+nuget push appcfg.1*.nupkg $nugetApiKey -Source https://www.nuget.org/api/v2/package
