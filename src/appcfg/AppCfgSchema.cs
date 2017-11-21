@@ -23,7 +23,11 @@ namespace appcfg
             var routeSignatures = this.Routes.SelectMany(r => new[]{r.Path}.Concat(r.Aliases)).ToArray();
             var uniqueSignatures = routeSignatures.Distinct().ToArray();
             if (routeSignatures.Length > uniqueSignatures.Length)
-                throw new InvalidOperationException($"Routes in config schema are not unique!");            
+                throw new InvalidOperationException($"Routes in config schema are not unique!");
+
+            var defaultRoutePaths = this.Routes.Where(r => r.IsDefault).Select(r => r.Path).ToArray();
+            if (defaultRoutePaths.Count() > 1)
+                throw new InvalidOperationException($"Only one default route allowed, but multiple defined: {string.Join(", ", defaultRoutePaths)}");
         }
     }
 

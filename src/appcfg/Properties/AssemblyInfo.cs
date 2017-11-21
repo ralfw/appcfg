@@ -32,7 +32,11 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.0.1")]
+[assembly: AssemblyVersion("1.0.2.0")]
+    // increase major upon breaking changes
+    // increase minor upon enhancements
+    // increase build upon bug fixes
+    // increase revision upon changes not affecting the behavior
 [assembly: AssemblyFileVersion("1.0.0.0")]
 
 [assembly: InternalsVisibleTo("appcfg_tests")]

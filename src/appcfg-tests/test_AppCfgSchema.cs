@@ -32,5 +32,17 @@ namespace appcfg_tests
             };
             Assert.Throws<InvalidOperationException>(() => new AppCfgSchema("config1.json", routes));
         }
+
+        
+        [Test]
+        public void Schema_may_have_only_one_default_route()
+        {
+            var routes = new[] {
+                new Route("r1",isDefault:true),
+                new Route("r2"),
+                new Route("r3",isDefault:true), 
+            };
+            Assert.Throws<InvalidOperationException>(() => new AppCfgSchema("", routes));
+        }
     }
 }
